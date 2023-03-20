@@ -20,7 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txt1,txt2,f1;
+    EditText txt1,txt2;
+    TextView f2;
     Button btn1, btn2;
     FirebaseAuth Fauth;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         txt1 = findViewById(R.id.txt1);
         txt2 = findViewById(R.id.pass);
-        f1 = findViewById(R.id.f1);
+        f2 = findViewById(R.id.f1);
 
         btn1 = findViewById(R.id.button);
         btn2 = findViewById(R.id.btn3);
@@ -46,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        f1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Forgotpassword.class);
-                startActivity(intent);
-            }
-        });
+//        f2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this,Forgotpassword.class);
+//                startActivity(intent);
+//            }
+//        });
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    public void OnClick(View view) {
+        startActivity(new Intent(getApplicationContext(),Forgotpassword.class));
+
     }
 
 //    public void OnClick(View view) {
